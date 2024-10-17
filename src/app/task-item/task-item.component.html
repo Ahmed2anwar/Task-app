@@ -1,0 +1,39 @@
+<p-table
+  [value]="task"
+  [tableStyle]="{ 'min-width': '40rem' }"
+  [paginator]="true"
+  [rows]="6"
+  styleClass="p-datatable-striped"
+  [responsive]="true"
+  [rowHover]="true"
+  [sortMode]="'single'"
+  class="custom-table"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Index</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th pSortableColumn="completed">
+        Status <p-sortIcon field="completed"> </p-sortIcon>
+      </th>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-task>
+    <tr (click)="onTaskClick(task)" style="cursor: pointer">
+      <td style="padding: 15px">{{ task.id }}</td>
+      <td style="padding: 15px">{{ task.title }}</td>
+      <td style="padding: 15px">{{ task.description }}</td>
+      <td
+        style="padding: 15px"
+        [ngClass]="{
+          'text-green': task.completed,
+          'text-red': !task.completed
+        }"
+      >
+        {{ task.completed ? "Completed" : "Incomplete" }}
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

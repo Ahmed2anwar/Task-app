@@ -1,0 +1,20 @@
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #ececec;
+  padding: 10px;
+  text-align: left;
+}
+
+.custom-table th {
+  background-color: #2b2a2a;
+  color: white;
+}
+.text-green {
+  color: rgb(26, 184, 26);
+}
+
+.text-red {
+  color: red;
+}
+
